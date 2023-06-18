@@ -16,24 +16,119 @@ header {
   padding: 0 20px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 nav {
-  display: inline-block;
-}
-nav ul {
-list-style: none;
-margin: 0;
-padding: 0;
-}
-
-nav ul li {
-display: inline-block;
-margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
 }
 
-nav ul li a {
-color: #fff;
-text-decoration: none;
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
 }
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav-active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .nav-active li {
+    opacity: 0;
+  }
+
+  .nav-active li a {
+    color: #fff;
+  }
+
+  .burger .line1,
+  .burger .line2,
+  .burger .line3 {
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .nav-active li:nth-child(1) {
+    transition: opacity 0.5s ease 0.2s;
+  }
+
+  .nav-active li:nth-child(2) {
+    transition: opacity 0.5s ease 0.4s;
+  }
+
+  .nav-active li:nth-child(3) {
+    transition: opacity 0.5s ease 0.6s;
+  }
+
+  .nav-active li:nth-child(4) {
+    transition: opacity 0.5s ease 0.8s;
+  }
+
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .toggle .line2 {
+    opacity: 0;
+  }
+
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
 
 section {
 padding: 50px 0;
@@ -159,3 +254,5 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
   background-color: #45a049;
 }
+
+/* == */
